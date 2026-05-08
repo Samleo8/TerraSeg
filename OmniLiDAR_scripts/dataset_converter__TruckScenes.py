@@ -89,7 +89,7 @@ sensor_frequencies = {
     "LIDAR_TOP_RIGHT": 10,
     "LIDAR_REAR": 10,
 }
-devkit = TruckScenes(version="v1.0-trainval", dataroot=str(source_root), verbose=False)
+devkit = TruckScenes(version="v1.2-trainval", dataroot=str(source_root), verbose=False)
 
 scene_name2token = {s["name"]: s["token"] for s in devkit.scene}
 
@@ -158,7 +158,7 @@ extra_rotations = {
     "LIDAR_TOP_RIGHT": 90,
     "LIDAR_REAR": 180,
 }  # Degrees.
-devkit = TruckScenes(version="v1.0-mini", dataroot=str(source_root), verbose=False)
+devkit = TruckScenes(version="v1.2-mini", dataroot=str(source_root), verbose=False)
 
 preprocess_transforms = {key: np.eye(4) for key in sensors}
 for sensor_name in sensors:
