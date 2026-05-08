@@ -1,0 +1,25 @@
+# uv and Virtual Environments.
+.venv/
+.env
+
+# Python caches.
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Background logs.
+*.log
+
+# IDEs and editors.
+.vscode/
+.idea/
+*.swp
+
+# Dataset outputs.
+/OmniLiDAR/
+/pointcloud/
+/labels/
+
+# Ruff cache.
+.ruff_cache/

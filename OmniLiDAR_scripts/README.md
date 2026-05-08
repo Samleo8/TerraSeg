@@ -36,8 +36,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 2. **Sync the Base Environment**:
-Navigate to this `OmniLiDAR_scripts` directory and sync the base project environment. This reads the provided `pyproject.toml` and `uv.lock` files to instantly build the base `.venv`.
+Navigate to the root directory of the repository (e.g. `TerraSeg/`) and sync the base project environment. This reads the root uv.lock file to instantly build the shared workspace `.venv`.
 ```bash
+cd PUT_YOUR_DIRECTORY_HERE/TerraSeg
 uv sync
 ```
 
@@ -50,8 +51,8 @@ Before running a converter, you must edit the script to point to your local file
 Open the target converter script (e.g. `dataset_converter__nuScenes.py`) and locate the target and source root variables near the top of the file. Replace the placeholder text with your actual directory paths:
 
 ```python
-omnilidar_root = Path('PUT_YOUR_DIRECTORY_HERE/OmniLiDAR')
-source_root    = Path('PUT_YOUR_DIRECTORY_HERE/Dataset')   # E.g. nuScenes root
+omnilidar_root = Path("PUT_YOUR_DIRECTORY_HERE/OmniLiDAR")
+source_root    = Path("PUT_YOUR_DIRECTORY_HERE/Dataset")   # e.g. nuScenes root
 ```
 
 *Note 1: Ensure you leave the `.mkdir()` commands intact so the script can build the proper subdirectories.*
@@ -61,11 +62,12 @@ source_root    = Path('PUT_YOUR_DIRECTORY_HERE/Dataset')   # E.g. nuScenes root
 ## 🚀 Step 3: Run the converters
 
 
-Do **not** use the standard `python script.py` command. Instead, use `uv run` so the package manager can dynamically build the isolated environment required for that specific dataset.
+Navigate into the scripts folder, and use `uv run` to execute the converter. Do **not** use the standard `python script.py` command. `uv run` will dynamically read the inline metadata inside the script, download the specific dataset devkit into a temporary isolated environment, and execute it.
 
 For standard datasets (e.g. nuScenes), simply run:
 
 ```bash
+cd OmniLiDAR_scripts
 uv run dataset_converter__nuScenes.py
 ```
 
@@ -78,6 +80,7 @@ uv run dataset_converter__nuScenes.py
 The Waymo devkit relies on an older versions of TensorFlow and JAX that conflict with standard indices. To run the Waymo converter, you must pass specific flags to bypass the security index lock and locate archived wheels:
 
 ```bash
+cd OmniLiDAR_scripts
 uv run --index-strategy unsafe-best-match --find-links https://storage.googleapis.com/jax-releases/jax_releases.html dataset_converter__WaymoPerception.py
 ```
 

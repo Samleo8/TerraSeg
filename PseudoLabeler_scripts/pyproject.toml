@@ -1,0 +1,28 @@
+[project]
+name = "pseudolabeler-scripts"
+version = "0.1.0"
+description = "PseudoLabeler project"
+readme = "README.md"
+requires-python = "==3.10.*"
+dependencies = [
+    "cachetools>=7.0.5",
+    "ipykernel>=7.2.0", 
+    "ipywidgets>=8.1.8", 
+    "matplotlib>=3.10.8",
+    "numpy==1.26.4",
+    "opencv-python>=4.11.0.86",
+    "pillow==11.1.0",
+    "pyarrow~=15.0",
+    "pyquaternion>=0.9.9",
+    "scikit-learn>=1.7.2",
+    "tabulate>=0.9.0",
+    "torch==2.5.0",
+    "torchaudio==2.5.0",
+    "torchrobotics",
+    "torchvision==0.20.0",
+    "tqdm==4.66.5",
+    "terraseg-utils"
+]
+
+[tool.uv.sources]
+terraseg-utils = { workspace = true }

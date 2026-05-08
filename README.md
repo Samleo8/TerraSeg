@@ -15,9 +15,12 @@ Coming soon! We aim to release in May!
 
 
 ### Citation Information
+
+
 <p align="justify">
 If TerraSeg is useful to your research, please kindly recognize our contributions by citing our paper.
 </p>
+
 
 ```
 @inproceedings{lentsch2026terraseg,
