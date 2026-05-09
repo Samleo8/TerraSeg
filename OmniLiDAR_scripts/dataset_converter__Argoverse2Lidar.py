@@ -281,7 +281,7 @@ for seq_num, seq_dir in tqdm(list(enumerate(seq_dirs)), desc="Sequences"):
 
 # Create transforms.
 transforms_root = omnilidar_root / "transforms"
-transforms_file_dir = transforms_root / "AV2_lidar_transforms.json"
+transforms_file_dir = transforms_root / "AV2_Lidar_transforms.json"
 transforms_root.mkdir(exist_ok=True, parents=True)
 
 sensors = [
@@ -308,7 +308,7 @@ with open(transforms_file_dir, "w") as f:
 
 # Create ego removal radius file.
 egoremovalradius_root = omnilidar_root / "egoremovalradii"
-egoremovalradius_file_dir = egoremovalradius_root / "AV2_lidar_egoremovalradii.json"
+egoremovalradius_file_dir = egoremovalradius_root / "AV2_Lidar_egoremovalradii.json"
 egoremovalradius_root.mkdir(exist_ok=True, parents=True)
 
 sensors = [
