@@ -21,5 +21,12 @@ __pycache__/
 /pointcloud/
 /labels/
 
+# Pseudo-labeling outputs.
+PseudoLabeler/
+PseudoLabeler__ablation_study1__base/
+PseudoLabeler__ablation_study1__post/
+PseudoLabeler__ablation_study1__pre/
+PseudoLabeler__ablation_study2/
+
 # Ruff cache.
 .ruff_cache/
