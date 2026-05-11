@@ -1,3 +1,9 @@
+[project]
+name = "TerraSeg"
+version = "0.1.0"
+readme = "README.md"
+license = {file = "LICENSE"}
+
 [tool.uv.workspace]
 members = [
     "utils",
