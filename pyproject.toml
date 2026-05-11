@@ -1,6 +1,10 @@
 [project]
 name = "TerraSeg"
 version = "0.1.0"
+authors = [
+  { name = "Ted Lentsch" },
+  { name = "Santiago Montiel-Marín" },
+]
 readme = "README.md"
 license = {file = "LICENSE"}
 
