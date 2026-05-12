@@ -145,15 +145,6 @@ for sample_dict in tqdm(dataloader, desc="Scans"):
         )
 
     # Save pseudo-labels.
-    file_name = str(sample_dict["x_dir"].name).replace("pointcloud", "labels")
-    labels_path = (
-        results_root
-        / sample_dict["source_dataset"]
-        / sample_dict["source_split"]
-        / "labels"
-        / file_name
-    )
-    labels_path = labels_path.with_suffix(".npy")
     labels_path.parent.mkdir(exist_ok=True, parents=True)
     np.save(labels_path, postprocessed_pred_labels.cpu().numpy())
 
