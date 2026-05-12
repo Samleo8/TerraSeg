@@ -77,6 +77,11 @@ for sample_dict in tqdm(dataloader, desc="Scans"):
 
     # Get data.
     pc_lidar = sample_dict["x"].to(device, non_blocking=True)
+    if pc_lidar.shape[0] == 0:
+        empty_pred_labels = np.array([], dtype=np.uint8)
+        labels_path.parent.mkdir(exist_ok=True, parents=True)
+        np.save(labels_path, empty_pred_labels)
+        continue
 
     # Set seeds.
     random.seed(SEED)
@@ -144,14 +149,5 @@ for sample_dict in tqdm(dataloader, desc="Scans"):
         )
 
     # Save pseudo-labels.
-    file_name = str(sample_dict["x_dir"].name).replace("pointcloud", "labels")
-    labels_path = (
-        results_root
-        / sample_dict["source_dataset"]
-        / sample_dict["source_split"]
-        / "labels"
-        / file_name
-    )
-    labels_path = labels_path.with_suffix(".npy")
     labels_path.parent.mkdir(exist_ok=True, parents=True)
     np.save(labels_path, postprocessed_pred_labels.cpu().numpy())
