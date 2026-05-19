@@ -96,6 +96,12 @@ for sample_dict in tqdm(dataloader, desc="Scans"):
 
     # Optimize.
     egoremoved_pc = model.remove_ego_points(pc=pc_lidar)
+    if egoremoved_pc.shape[0] == 0:
+        ignore_pred_labels = np.full((pc_lidar.shape[0],), fill_value=2, dtype=np.uint8)
+        labels_path.parent.mkdir(exist_ok=True, parents=True)
+        np.save(labels_path, ignore_pred_labels)
+        continue
+    
     denoised_pc = model.preprocess_denoise_pc(pc=egoremoved_pc)
     pc = denoised_pc.clone()
 
