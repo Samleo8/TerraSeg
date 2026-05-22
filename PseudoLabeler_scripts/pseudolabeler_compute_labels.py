@@ -145,6 +145,7 @@ for sample_dict in tqdm(dataloader, desc="Scans"):
     # Predict.
     if best_state:
         model.load_state_dict(best_state)
+        model.to(device)
     with torch.no_grad():
         model.eval()
         pc_lidar = sample_dict["x"].to(device)
