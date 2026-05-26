@@ -1,7 +1,7 @@
 # PseudoLabeler Scripts
 
 
-This repository contains the standalone Python scripts for the **PseudoLabeler** module. PseudoLabeler is a self-supervised method that generates high-quality ground and non-ground labels through per-scan runtime optimization. It is designed to label raw LiDAR scans in the OmniLiDAR dataset without requiring any human-annotated training data.
+This repository contains the standalone Python scripts for the **PseudoLabeler** module. PseudoLabeler is a self-supervised method that generates high-quality ground and non-ground labels through per-scan runtime optimization. It is designed to label raw LiDAR scans in the [OmniLiDAR](../OmniLiDAR_scripts/) dataset without requiring any human-annotated training data.
 
 To ensure absolute reproducibility, this project strictly utilizes [uv](https://github.com/astral-sh/uv) as its package manager.
 
