@@ -6,3 +6,7 @@ indent-width = 4
 # Select rules to check: E (errors), F (fatal bugs like unused imports), I (sort imports)
 select = ["E", "F", "I"]
 ignore = ["E501"]  # Tell the linter to ignore line length warnings.
+
+[lint.per-file-ignores]
+"TerraSeg_scripts/terraseg_train.py" = ["E402"]
+"TerraSeg_scripts/terraseg_test.py" = ["E402"]
