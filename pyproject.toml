@@ -15,7 +15,7 @@ members = [
     "PseudoLabeler_scripts",
     "TerraSeg_scripts",
     "ptv3",
-    "terraseg",
+    "terraseg_lib",
 ]
 
 [tool.uv]
