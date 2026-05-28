@@ -1,0 +1,40 @@
+terraseg_node:
+  ros__parameters:
+    # Released TerraSeg variant: "B" (Base, ~46M params) or "S" (Small, ~12M params).
+    variant: "S"
+
+    # Trained checkpoint location. Two accepted formats:
+    #   1. Absolute filesystem path to a local file produced by terraseg_train.py, e.g.
+    #      "/abs/path/to/best.pth".
+    #   2. Hugging Face URI of the form "hf://<user>/<repo>/<filename>", e.g.
+    #      "hf://TedLentsch/TerraSeg/terraseg_s.pth". The file is downloaded once and
+    #      cached on first launch via huggingface_hub.
+    # Required: replace the default with your own choice.
+    checkpoint_path: "hf://TedLentsch/TerraSeg/terraseg_s.pth"
+
+    # Optional Hugging Face revision (branch / tag / commit) for the hf:// URI above.
+    # Leave empty to track the latest commit on the default branch.
+    hf_revision: ""
+
+    # Decision threshold for the sigmoid output. Set to a negative value to defer to the
+    # threshold stored in the checkpoint (recommended).
+    decision_threshold: -1.0
+
+    # PTv3 voxel grid size in meters.
+    grid_size: 0.05
+
+    # Topic configuration.
+    input_topic: "/lidar/points"
+    output_topic: "/terraseg/segmented"
+
+    # Inference device. Use "cuda:0" for the first GPU, or "cpu" to fall back to CPU.
+    # TerraSeg runs in FP32 only; lower-precision dtypes (BF16, FP16) are not supported
+    # because PTv3's sparse-convolution path becomes numerically unstable at reduced
+    # precision. There is no precision knob.
+    device: "cuda:0"
+
+    # Wrap the model with torch.compile for an additional inference speedup. Adds a
+    # one-time compilation cost at the first scan (typically a few seconds). Recommended
+    # for real-time deployment; disable for fast iteration during development.
+    compile_model: true
+  
