@@ -1,5 +1,5 @@
 [project]
-name = "TerraSeg"
+name = "terraseg-workspace"
 version = "0.1.0"
 authors = [
   { name = "Ted Lentsch" },
@@ -13,20 +13,29 @@ members = [
     "utils",
     "OmniLiDAR_scripts",
     "PseudoLabeler_scripts",
+    "TerraSeg_scripts",
+    "ptv3",
+    "terraseg",
 ]
 
 [tool.uv]
 environments = [
     "sys_platform == 'linux' and platform_machine == 'x86_64'"
 ]
+index-strategy = "unsafe-best-match"
 
 [[tool.uv.index]]
-url = "https://download.pytorch.org/whl/cu121"
+url = "https://download.pytorch.org/whl/cu124"
 
 [tool.uv.sources]
-torchrobotics = { git = "https://github.com/TedLentsch/torchrobotics.git", rev = "d244a9f82e42fb5f72ecdc8aa8adf786b5fac8be" }
+torchrobotics = { git = "https://github.com/TedLentsch/torchrobotics.git", rev = "0ffa2a2510953c82e4cd3333e4449b57897bd390" }
+torch-scatter = { url = "https://data.pyg.org/whl/torch-2.4.0%2Bcu124/torch_scatter-2.1.2%2Bpt24cu124-cp310-cp310-linux_x86_64.whl" }
 
 [dependency-groups]
 dev = [
     "ruff>=0.15.12",
 ]
+
+[tool.uv.extra-build-dependencies]
+torch-scatter = ["torch"]
+flash-attn = ["torch", "packaging", "wheel"]
