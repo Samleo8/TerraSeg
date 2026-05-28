@@ -114,6 +114,10 @@ This will compute per-class recall, precision, and IoU on the nuScenes, Semantic
 * `terraseg_utils.py`: Decision-threshold mIoU sweep and the shared validation loop.
 
 
+**Ablation Study:**
+* `terraseg_test_ablation_study1.py`: Script to evaluate how terrain flatness impacts TerraSeg's performance.
+
+
 **Related workspace members:**
 * `terraseg/` (top-level): the shared TerraSeg library, containing the model definition, the `replace_bn1d_with_gn` BatchNorm-to-GroupNorm swap, the feature-engineering function `compute_terraseg_features`, and the `TerraSegPredictor` class for single-frame deployment inference.
 * `TerraSeg_ros2/` (top-level, **not** a uv workspace member): the ROS2 node that wraps `TerraSegPredictor` and exposes TerraSeg as a `sensor_msgs/PointCloud2` -> `sensor_msgs/PointCloud2` filter. Built with `colcon`, not with `uv`.
