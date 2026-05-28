@@ -3,7 +3,7 @@
 
 This workspace member contains the **library code** for TerraSeg: the model definition, BatchNorm-to-GroupNorm swap, feature engineering, and a single-frame predictor.
 
-It is depended on by both the training scripts (`TerraSeg_scripts/`) and the ROS2 node (`TerraSeg_ros2/`), so the same TerraSeg model and inference pipeline is reused everywhere.
+It is depended on by both the training scripts ([TerraSeg_scripts](../TerraSeg_scripts/)) and the ROS2 node ([TerraSeg_ros2](../TerraSeg_ros2)), so the same TerraSeg model and inference pipeline is reused everywhere.
 
 
 ## Public API
