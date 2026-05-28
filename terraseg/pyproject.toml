@@ -1,0 +1,20 @@
+[project]
+name = "terraseg"
+version = "0.1.0"
+description = "TerraSeg library: model definition, feature engineering, and single-frame predictor for ground segmentation. Used by both the training scripts and the ROS2 node."
+requires-python = "==3.10.*"
+dependencies = [
+    "torch",
+    "ptv3",
+    "huggingface_hub>=0.24",
+]
+
+[tool.uv.sources]
+ptv3 = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/terraseg"]
