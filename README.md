@@ -4,7 +4,7 @@
     <a href="https://scholar.google.com/citations?user=54NWkMoAAAAJ&hl=en">Ted Lentsch</a><sup>1</sup>,
     <a href="https://www.santimontiel.eu/">Santiago Montiel-Marín</a><sup>2</sup>,
     <a href="https://sites.google.com/it-caesar.de/homepage/">Holger Caesar</a><sup>2</sup>, and
-    <a href="https://scholar.google.com/citations?user=wQU1dJAAAAAJ&hl=en">Dariu Gavrila</a><sup>1</sup>,
+    <a href="https://scholar.google.com/citations?user=wQU1dJAAAAAJ&hl=en">Dariu Gavrila</a><sup>1</sup>
 </p>
 
 <p align="center" style="font-size: 0.9em; font-style: italic;">
@@ -15,7 +15,7 @@
 <p align="center">
     📝 <a href="https://arxiv.org/abs/2603.27344">arXiv</a> ·
     🤗 <a href="https://huggingface.co/TedLentsch/TerraSeg">Hugging Face</a> ·
-    📚 <a href="#citation">Cite us!</a>
+    📚 <a href="#️-citation">Cite us!</a>
 </p>
 
 ## 📰 News
