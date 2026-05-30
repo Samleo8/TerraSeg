@@ -121,6 +121,20 @@ Researchers and developers who want to retrain TerraSeg, evaluate on the OmniLiD
 Training takes ~10 epochs on a single GPU and uses the balanced multi-dataset sampler matching paper section A.1. The released checkpoints in this repository were produced by exactly this flow on OmniLiDAR minus VoD (the only dataset we cannot redistribute). See the [model card](https://huggingface.co/TedLentsch/TerraSeg) for the full reproduction notes.
 
 
+### 🛠️ GPU compatibility
+
+| Hardware | Examples | Status |
+| --- | --- | --- |
+| **Volta CUDA** (sm_70) | V100, V100S | ❌ flash-attn requires Ampere+ |
+| **Turing CUDA** (sm_75) | RTX 20xx, T4 | ❌ flash-attn requires Ampere+ |
+| **Ampere CUDA** (sm_80, sm_86) | RTX 30xx, A40, A100 | ✅ Verified |
+| **Hopper CUDA** (sm_90) | H100, H200 | ✅ Expected to work |
+| **Blackwell CUDA** (sm_120) | RTX 50xx, RTX PRO, B100, B200 | ❌ Needs pin override (planned) |
+| **CPU only** | any | ❌ spconv `MaskImplicitGemm` is CUDA-only |
+
+The default stack (`torch 2.4.1` + `cu124`, `spconv-cu124`, `torch-scatter pt24cu124`, `flash-attn 2.8.3 cu12torch2.4`) is verified on Ampere A100 hardware. A future release will add Blackwell support!
+
+
 ## 🖊️ Citation
 
 <p align="justify">
