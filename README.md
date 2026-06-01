@@ -18,12 +18,23 @@
     📚 <a href="#️-citation">Cite us!</a>
 </p>
 
+
 ## 📰 News
 
 * [2026-05-29] *Finished code release on GitHub!*
 * [2026-05-28] *Finished model weight release on Hugging Face!*
 * [2026-03-28] *Paper release on arXiv (v1)!*
 * [2026-02-21] *TerraSeg has been accepted for CVPR 2026!*
+
+
+## 🎥 Video
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=A-WTTnsplmo">
+    <img src="https://img.youtube.com/vi/A-WTTnsplmo/maxresdefault.jpg" alt="TerraSeg video" width="640">
+  </a>
+</p>
+<p align="center"><i>▶︎ 90 seconds video on YouTube</i></p>
 
 
 ## ⭐ Highlights
