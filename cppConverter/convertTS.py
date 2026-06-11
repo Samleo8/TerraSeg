@@ -5,8 +5,19 @@ Convert the TerraSeg PyTorch model to a TorchScript format optimized for C++ dep
 import argparse
 import torch
 import torch_tensorrt
-from terraseg_lib.src.model import build_terraseg, TerraSeg
-from terraseg_lib.src.norm import replace_bn1d_with_gn
+# from terraseg_lib.src.model import build_terraseg, TerraSeg
+# from terraseg_lib.src.norm import replace_bn1d_with_gn
+
+from terraseg import (
+
+    TerraSeg,                   # nn.Module
+    TERRASEG_B_CONFIG,          # dict
+    TERRASEG_S_CONFIG,          # dict
+    build_terraseg,             # Variant -> TerraSeg
+    replace_bn1d_with_gn,       # See paper section 3.4
+    compute_terraseg_features,  # (N,3) coord -> (N,3) feat
+    TerraSegPredictor,          # Load checkpoint, predict single-frame
+)
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Convert TerraSeg model to TorchScript")
