@@ -35,3 +35,6 @@ PseudoLabeler__ablation_study2/
 /build/
 /install/
 /log/
+
+# Models
+models/
