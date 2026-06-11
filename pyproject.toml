@@ -8,7 +8,6 @@ authors = [
 readme = "README.md"
 license = {file = "LICENSE"}
 dependencies = [
-    "ptv3",
     "terraseg",
 ]
 
